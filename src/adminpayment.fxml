@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="575.0" prefWidth="745.0" style="-fx-background-color: #e3ebf215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminPaymentController">
+   <children>
+      <Label id="usernameLabel" layoutX="36.0" layoutY="29.0" prefHeight="48.0" prefWidth="266.0" text="PAYMENT" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="678.0" layoutY="40.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="paymentTable" layoutX="32.0" layoutY="148.0" prefHeight="409.0" prefWidth="686.0">
+         <columns>
+            <TableColumn fx:id="paymentid" prefWidth="137.2" text="Payment ID" />
+            <TableColumn fx:id="bookingid" prefWidth="137.2" text="Booking ID" />
+            <TableColumn fx:id="paymentmethod" prefWidth="137.2" text="Payment Method" />
+            <TableColumn fx:id="paymentstatus" prefWidth="137.2" text="Payment Status" />
+            <TableColumn fx:id="paymentdate" prefWidth="137.2" text="Payment Date" />
+         </columns>
+      </TableView>
+      <Label id="nameLabel" fx:id="nameLabel" layoutX="36.0" layoutY="110.0" prefHeight="18.0" prefWidth="106.0" text="Payment Method:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button id="updateButton" fx:id="btnupdate" layoutX="569.0" layoutY="108.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="UPDATE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button id="deleteButton" fx:id="btndelete" layoutX="645.0" layoutY="108.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="DELETE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <TextField id="fnameTextfield" fx:id="searchField" layoutX="370.0" layoutY="42.0" prefHeight="23.0" prefWidth="289.0" promptText="Search" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="paymentmethodcombobox" layoutX="144.0" layoutY="107.0" prefHeight="26.0" prefWidth="415.0" style="-fx-background-radius: 50;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="575.0" prefWidth="745.0" style="-fx-background-color: #e3ebf215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminFlightController">
+   <children>
+      <Label id="usernameLabel" layoutX="36.0" layoutY="29.0" prefHeight="48.0" prefWidth="266.0" text="FLIGHT" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="678.0" layoutY="40.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="flightTable" layoutX="32.0" layoutY="259.0" prefHeight="298.0" prefWidth="686.0">
+    <columns>
+        <TableColumn fx:id="flightId" text="Flight ID" />
+        <TableColumn fx:id="passengerId" text="Passenger ID" />
+        <TableColumn fx:id="departureLocation" text="Departure Location" />
+        <TableColumn fx:id="arrivalLocation" text="Arrival Location" />
+        <TableColumn fx:id="departureTime" text="Departure Time" />
+        <TableColumn fx:id="arrivalTime" text="Arrival Time" />
+        <TableColumn fx:id="departureDate" text="Departure Date" />
+        <TableColumn fx:id="roundtrip" text="Roundtrip" />
+        <TableColumn fx:id="returnDate" text="Return Date" />
+    </columns>
+</TableView>
+      <Label id="nameLabel" layoutX="36.0" layoutY="110.0" prefHeight="18.0" prefWidth="106.0" text="Arrival Location:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label id="emailLabel" layoutX="36.0" layoutY="143.0" prefHeight="18.0" prefWidth="72.0" text="Round trip:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="emailTextfield" fx:id="roundtriptextfield" layoutX="138.0" layoutY="139.0" prefHeight="26.0" prefWidth="232.0" promptText="Yes" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label id="fnameLabel" layoutX="382.0" layoutY="109.0" prefHeight="18.0" prefWidth="119.0" text="Departure Time:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label id="lnameLabel" layoutX="382.0" layoutY="143.0" prefHeight="18.0" prefWidth="119.0" text="Departure Date:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="lnameTextfield" fx:id="departuredatetextfield" layoutX="488.0" layoutY="139.0" prefHeight="26.0" prefWidth="232.0" promptText="2025-02-14" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label id="numberLabel" layoutX="382.0" layoutY="178.0" prefHeight="18.0" prefWidth="95.0" text="Return Date:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="numberTextfield" fx:id="returndatetextfield" layoutX="488.0" layoutY="174.0" prefHeight="26.0" prefWidth="232.0" promptText="2025-03-01" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Button id="updateButton" fx:id="btnupdate" layoutX="279.0" layoutY="219.0" mnemonicParsing="false" onAction="#updateFlight" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="UPDATE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button id="deleteButton" fx:id="btndelete" layoutX="418.0" layoutY="219.0" mnemonicParsing="false" onAction="#deleteFlight" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="DELETE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <TextField id="fnameTextfield" fx:id="searchField" layoutX="370.0" layoutY="42.0" prefHeight="23.0" prefWidth="289.0" promptText="Search" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="departuretimecombobox" layoutX="488.0" layoutY="107.0" prefHeight="25.0" prefWidth="232.0" style="-fx-background-radius: 50;" />
+      <ComboBox fx:id="arrivallocationcombobox" layoutX="138.0" layoutY="107.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-radius: 50;" />
+   </children>
+</AnchorPane>

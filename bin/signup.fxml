@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+ 
+<VBox fx:id="ValidationController" prefHeight="576.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignupController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="530.0" prefWidth="854.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="581.0" fitWidth="920.0" layoutX="-1.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../../../Downloads/gif.gif" />
+               </image>
+            </ImageView>
+            <Pane layoutX="254.0" layoutY="83.0" prefHeight="413.0" prefWidth="410.0" style="-fx-background-color: #e3ebf2; -fx-background-radius: 50;">
+               <children>
+                  <Button id="adminloginbtn" fx:id="createAccountBtn" layoutX="23.0" layoutY="357.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="36.0" prefWidth="365.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="SIGN UP" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Label id="usernameLabel" fx:id="nameLabel" layoutX="33.0" layoutY="157.0" prefHeight="18.0" prefWidth="72.0" text="Username:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label id="passwordLabel" fx:id="passwordLabel" layoutX="33.0" layoutY="220.0" prefHeight="18.0" prefWidth="72.0" text="Password:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="94.0" fitWidth="96.0" layoutX="158.0" layoutY="2.0">
+                     <image>
+                        <Image url="@../../../Downloads/aaa%20logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="fnameLabel" fx:id="fnameLabel" layoutX="33.0" layoutY="96.0" prefHeight="18.0" prefWidth="72.0" text="First Name:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField id="fnameTextfield" fx:id="fnameTextfield" layoutX="24.0" layoutY="114.0" prefHeight="36.0" prefWidth="176.0" promptText="Junhui" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label id="lnameLabel" fx:id="lnameLabel" layoutX="217.0" layoutY="96.0" prefHeight="18.0" prefWidth="72.0" text="Last Name:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField id="lnameTextfield" fx:id="lnameTextfield" layoutX="207.0" layoutY="114.0" prefHeight="36.0" prefWidth="176.0" promptText="Moon" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="nameTextfield" fx:id="usernameTextfield1" layoutX="28.0" layoutY="175.0" prefHeight="36.0" prefWidth="358.0" promptText="junmoon" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField id="passPasswordfield" fx:id="passPasswordfield" layoutX="24.0" layoutY="238.0" prefHeight="36.0" prefWidth="358.0" promptText="●●●●●●●●" style="-fx-background-radius: 50;" />
+                  <Label id="numberLabel" fx:id="numberLabel" layoutX="33.0" layoutY="281.0" prefHeight="18.0" prefWidth="72.0" text="Number:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField id="numberTextfield" fx:id="numberTextfield2" layoutX="24.0" layoutY="299.0" prefHeight="36.0" prefWidth="176.0" promptText="09123456789" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label id="emailLabel" fx:id="emailLabel" layoutX="218.0" layoutY="281.0" prefHeight="18.0" prefWidth="72.0" text="Email:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField id="emailTextfield" fx:id="emailTextfield" layoutX="207.0" layoutY="299.0" prefHeight="36.0" prefWidth="176.0" promptText="junmoon@gmail.com" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+            </Pane>
+            <Button id="backbtn" fx:id="backbtn" layoutX="38.0" layoutY="537.0" mnemonicParsing="false" onAction="#backButtonHandler" style="-fx-background-color: #1074bd; -fx-background-radius: 50;" text="← BACK" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
+ 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="575.0" prefWidth="745.0" style="-fx-background-color: #e3ebf215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminPassengerController">
+   <children>
+      <Label id="nameLabel" fx:id="nameLabel" layoutX="36.0" layoutY="110.0" prefHeight="18.0" prefWidth="72.0" text="Username:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label id="passLabel" fx:id="passwordLabel" layoutX="36.0" layoutY="144.0" prefHeight="18.0" prefWidth="72.0" text="Password:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label id="emailLabel" fx:id="emailLabel" layoutX="36.0" layoutY="179.0" prefHeight="18.0" prefWidth="72.0" text="Email:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="nameTextfield" fx:id="usernameTextfield" layoutX="105.0" layoutY="106.0" prefHeight="26.0" prefWidth="266.0" promptText="junmoon" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField id="emailTextfield" fx:id="emailTextfield" layoutX="104.0" layoutY="175.0" prefHeight="26.0" prefWidth="266.0" promptText="junmoon@gmail.com" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <PasswordField id="passPasswordfield" fx:id="passPasswordfield" layoutX="105.0" layoutY="140.0" prefHeight="26.0" prefWidth="266.0" promptText="●●●●●●●●" style="-fx-background-radius: 50;" />
+      <TableView id="userTable" fx:id="mytable" layoutX="32.0" layoutY="259.0" prefHeight="298.0" prefWidth="690.0" style="-fx-background-color: #ff&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;?import javafx.scene.control.Button?&gt;&lt;?import javafx.scene.image.Image?&gt;&lt;?import javafx.scene.image.ImageView?&gt;&lt;?import javafx.scene.layout.Pane?&gt;&lt;?import javafx.scene.text.Font?&gt;&lt;Pane layoutX=&quot;7.0&quot; layoutY=&quot;8.0&quot; prefHeight=&quot;559.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd; -fx-background-radius: 20;&quot; xmlns=&quot;http://javafx.com/javafx/23.0.1&quot; xmlns:fx=&quot;http://javafx.com/fxml/1&quot;&gt;   &lt;children&gt;      &lt;Pane layoutX=&quot;39.0&quot; layoutY=&quot;14.0&quot; prefHeight=&quot;81.0&quot; prefWidth=&quot;82.0&quot; style=&quot;-fx-background-color: #fbe215; -fx-background-radius: 100;&quot;&gt;         &lt;children&gt;            &lt;ImageView fitHeight=&quot;56.0&quot; fitWidth=&quot;56.0&quot; layoutX=&quot;13.0&quot; layoutY=&quot;13.0&quot;&gt;               &lt;image&gt;                  &lt;Image url=&quot;@../../../Downloads/aa%20logo.png&quot; /&gt;               &lt;/image&gt;            &lt;/ImageView&gt;         &lt;/children&gt;      &lt;/Pane&gt;      &lt;Button layoutY=&quot;124.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;28.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd; -fx-border-color: #fbe215;&quot; text=&quot;PASSENGER&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; size=&quot;14.0&quot; /&gt;         &lt;/font&gt;      &lt;/Button&gt;      &lt;Button layoutY=&quot;160.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;27.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd;&quot; text=&quot;BOOK&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; size=&quot;14.0&quot; /&gt;         &lt;/font&gt;      &lt;/Button&gt;      &lt;Button layoutY=&quot;199.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;27.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd;&quot; text=&quot;FLIGHT&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; size=&quot;14.0&quot; /&gt;         &lt;/font&gt;      &lt;/Button&gt;      &lt;Button layoutY=&quot;238.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;27.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd;&quot; text=&quot;EXPLORE&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; size=&quot;14.0&quot; /&gt;         &lt;/font&gt;      &lt;/Button&gt;      &lt;Button layoutY=&quot;273.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;27.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd;&quot; text=&quot;ABOUT&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; size=&quot;14.0&quot; /&gt;         &lt;/font&gt;      &lt;/Button&gt;      &lt;Button id=&quot;logoutbtn&quot; layoutY=&quot;513.0&quot; mnemonicParsing=&quot;false&quot; prefHeight=&quot;27.0&quot; prefWidth=&quot;159.0&quot; style=&quot;-fx-background-color: #1074bd;&quot; text=&quot;LOG OUT&quot; textFill=&quot;#fbe215&quot;&gt;         &lt;font&gt;            &lt;Font name=&quot;Arial Rounded MT Bold&quot; se&gt;fbe9;">
+         <columns>
+            <TableColumn fx:id="idcol" prefWidth="98.57" text="Passenger ID" />
+            <TableColumn id="usernamecolumn" fx:id="usernamecol" prefWidth="98.57" text="Username" />
+            <TableColumn id="passwordcolumn" fx:id="passwordcol" prefWidth="98.57" text="Password" />
+            <TableColumn id="accountcreatedcolumn" fx:id="fnamecol" prefWidth="98.57" text="First Name" />
+            <TableColumn fx:id="lnamecol" prefWidth="98.57" text="Last Name" />
+            <TableColumn id="statuscolumn" fx:id="emailcol" prefWidth="89.5999755859375" text="Email" />
+            <TableColumn fx:id="phonenumbercol" prefWidth="108.800048828125" text="Phone Number" />
+         </columns>
+      </TableView>
+      <Button id="createButton" fx:id="btncreate" layoutX="244.0" layoutY="219.0" mnemonicParsing="false" onAction="#createUser" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="CREATE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button id="updateButton" fx:id="btnupdate" layoutX="349.0" layoutY="219.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="UPDATE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button id="deleteButton" fx:id="btndelete" layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;" text="DELETE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label id="usernameLabel" layoutX="36.0" layoutY="29.0" prefHeight="48.0" prefWidth="266.0" text="PASSENGER" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label id="fnameLabel" fx:id="fnameLabel" layoutX="382.0" layoutY="109.0" prefHeight="18.0" prefWidth="72.0" text="First Name:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="fnameTextfield" fx:id="fnameTextfield" layoutX="454.0" layoutY="105.0" prefHeight="26.0" prefWidth="266.0" promptText="Junhui" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label id="lnameLabel" fx:id="lnameLabel" layoutX="382.0" layoutY="143.0" prefHeight="18.0" prefWidth="72.0" text="Last Name:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="lnameTextfield" fx:id="lnameTextfield" layoutX="454.0" layoutY="139.0" prefHeight="26.0" prefWidth="266.0" promptText="Moon" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label id="numberLabel" fx:id="numberLabel" layoutX="382.0" layoutY="178.0" prefHeight="18.0" prefWidth="72.0" text="Number:" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="numberTextfield" fx:id="numberTextfield" layoutX="454.0" layoutY="174.0" prefHeight="26.0" prefWidth="266.0" promptText="09123456789" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="678.0" layoutY="40.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <TextField id="fnameTextfield" fx:id="searchField" layoutX="370.0" layoutY="42.0" prefHeight="23.0" prefWidth="289.0" promptText="Search" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="575.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="530.0" prefWidth="854.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ImageView fitHeight="574.0" fitWidth="920.0" layoutX="-1.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../../../Downloads/gif.gif" />
+               </image>
+            </ImageView>
+            <Pane layoutX="41.0" layoutY="241.0" prefHeight="294.0" prefWidth="338.0" style="-fx-background-color: #fbe215; -fx-background-radius: 50;">
+               <children>
+                  <TextField id="usernameTextfield" fx:id="usernameTextfield" layoutX="24.0" layoutY="115.0" prefHeight="36.0" prefWidth="292.0" style="-fx-background-radius: 50;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></TextField>
+                  <Button id="loginButton" fx:id="loginButton" layoutX="24.0" layoutY="221.0" mnemonicParsing="false" onAction="#loginbuttonHandler" prefHeight="36.0" prefWidth="292.0" style="-fx-background-color: #1074bd; -fx-background-radius: 50;" text="LOGIN" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Label id="usernameLabel" fx:id="usernameLabel" layoutX="35.0" layoutY="97.0" prefHeight="18.0" prefWidth="72.0" text="Username:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label id="passwordLabel" fx:id="passwordLabel" layoutX="35.0" layoutY="151.0" prefHeight="18.0" prefWidth="72.0" text="Password:" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <PasswordField id="passwordPasswordfield" fx:id="passwordPasswordfield" layoutX="24.0" layoutY="169.0" prefHeight="36.0" prefWidth="292.0" style="-fx-background-radius: 50;" />
+                  <ImageView fitHeight="110.0" fitWidth="111.0" layoutX="115.0">
+                     <image>
+                        <Image url="@../../../Downloads/aa%20logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="usernameLabel" fx:id="usernameLabel1" layoutX="84.0" layoutY="262.0" prefHeight="18.0" prefWidth="130.0" text="Fly Forward, Fly Avan!" textFill="#1074bd">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="sigupbtn" layoutX="198.0" layoutY="260.0" mnemonicParsing="false" onAction="#signupButtonHandler" prefHeight="22.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="Sign Up" textFill="#1074bd" underline="true">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+            </Pane>
+            <Label id="welcomeLabel" fx:id="welcomeLabel1" layoutX="543.0" layoutY="171.0" prefHeight="36.0" prefWidth="338.0" text="Fly with Avan Airways—where innovation meets the skies!" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="welcomeLabel" fx:id="welcomeLabel11" layoutX="549.0" layoutY="189.0" prefHeight="36.0" prefWidth="332.0" text="Experience seamless travel with top-tier service, cutting-" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="welcomeLabel" fx:id="welcomeLabel111" layoutX="598.0" layoutY="207.0" prefHeight="36.0" prefWidth="282.0" text="edge technology, and comfort that soars beyond" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="welcomeLabel" fx:id="welcomeLabel1111" layoutX="674.0" layoutY="225.0" prefHeight="36.0" prefWidth="206.0" text="expectations. Fly forward, fly Avan!" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button id="adminbtn" fx:id="adminButtonHandler" layoutX="764.0" layoutY="37.0" mnemonicParsing="false" onAction="#adminButtonHandler" prefHeight="23.0" prefWidth="130.0" style="-fx-background-color: #1074bd; -fx-background-radius: 50;" text="ADMIN ACCESS →" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

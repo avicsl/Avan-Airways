@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="744.0" style="-fx-background-color: #fbe215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserBookingController">
+   <children>
+      <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="679.0" layoutY="41.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="25.0" text="BOOKING" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <Button id="createButton" layoutX="565.0" layoutY="94.0" mnemonicParsing="false" onAction="#addBook" prefHeight="22.0" prefWidth="146.0" style="-fx-background-color: #1074bd; -fx-background-radius: 50;" text="ADD FLIGHT" textFill="#fbe215">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label layoutX="34.0" layoutY="95.0" prefHeight="20.0" prefWidth="542.0" text="Your Booking, Your Journey – See your flights take shape right here at Avan Airlines! ✈" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="userflighttable" layoutX="29.0" layoutY="163.0" prefHeight="390.0" prefWidth="686.0">
+         <columns>
+            <TableColumn fx:id="flightId" prefWidth="66.39999389648438" text="Flight ID" />
+            <TableColumn fx:id="departureLocation" prefWidth="102.39996337890625" text="Departure Location" />
+            <TableColumn fx:id="arrivalLocation" prefWidth="79.20001220703125" text="Arrival Location" />
+            <TableColumn fx:id="departureTime" prefWidth="100.79998779296875" text="Departure Time" />
+            <TableColumn fx:id="arrivalTime" prefWidth="83.20001220703125" text="Arrival Time" />
+            <TableColumn fx:id="departureDate" prefWidth="96.0" text="Departure Date" />
+            <TableColumn fx:id="roundtrip" prefWidth="75.2000732421875" text="Roundtrip" />
+            <TableColumn fx:id="returnDate" prefWidth="85.60003662109375" text="Return Date" />
+         </columns>
+      </TableView>
+      <TextField id="fnameTextfield" fx:id="searchField" layoutX="29.0" layoutY="127.0" prefHeight="23.0" prefWidth="522.0" promptText="Search" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Button id="createButton" layoutX="565.0" layoutY="128.0" mnemonicParsing="false" onAction="#markAsDone" prefHeight="22.0" prefWidth="146.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 50; -fx-border-color: #1074bd; -fx-border-radius: 50;" text="MARK AS DONE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

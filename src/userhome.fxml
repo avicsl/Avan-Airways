@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="744.0" style="-fx-background-color: #fbe215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserHomeController">
+   <children>
+      <ImageView fitHeight="282.0" fitWidth="720.0" layoutX="-8.0" layoutY="69.0">
+         <image>
+            <Image url="@../../../Downloads/header%20(4).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="679.0" layoutY="41.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="25.0" text="HOME" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <Pane layoutX="31.0" layoutY="289.0" prefHeight="265.0" prefWidth="390.0" style="-fx-background-color: #fff8c2; -fx-background-radius: 20; -fx-border-color: #1074bd; -fx-border-radius: 20;">
+         <children>
+            <Pane prefHeight="28.0" prefWidth="390.0" style="-fx-background-color: #1074bd; -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutX="54.0" prefHeight="28.0" prefWidth="283.0" text="PERSONAL INFORMATION" textFill="#fbe215">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutY="17.0" prefHeight="11.0" prefWidth="19.0" style="-fx-background-color: #1074bd;" />
+                  <Pane layoutX="376.0" layoutY="17.0" prefHeight="11.0" prefWidth="14.0" style="-fx-background-color: #1074bd;" />
+               </children>
+            </Pane>
+            <Label id="fnameLabel" fx:id="fnameLabel" layoutX="23.0" layoutY="66.0" prefHeight="18.0" prefWidth="72.0" text="First Name:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="lnameLabel" fx:id="lnameLabel" layoutX="23.0" layoutY="93.0" prefHeight="18.0" prefWidth="72.0" text="Last Name:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="emailLabel" fx:id="emailLabel" layoutX="23.0" layoutY="122.0" prefHeight="18.0" prefWidth="72.0" text="Email:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="numberLabel" fx:id="numberLabel" layoutX="23.0" layoutY="150.0" prefHeight="18.0" prefWidth="72.0" text="Number:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="nameLabel" fx:id="nameLabel" layoutX="23.0" layoutY="178.0" prefHeight="18.0" prefWidth="72.0" text="Username:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="passLabel" fx:id="passwordLabel" layoutX="23.0" layoutY="206.0" prefHeight="18.0" prefWidth="72.0" text="Password:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="fnameLabel" fx:id="fnameLabel1" layoutX="23.0" layoutY="39.0" prefHeight="18.0" prefWidth="86.0" text="Passenger ID:" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="fnameTextfield" fx:id="fnameTextfield" layoutX="119.0" layoutY="64.0" prefHeight="18.0" prefWidth="249.0" promptText="Junhui" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="lnameTextfield" fx:id="lnameTextfield" layoutX="119.0" layoutY="91.0" prefHeight="23.0" prefWidth="249.0" promptText="Moon" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="emailTextfield" fx:id="emailTextfield" layoutX="119.0" layoutY="120.0" prefHeight="23.0" prefWidth="249.0" promptText="junmoon@gmail.com" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="numberTextfield" fx:id="numberTextfield" layoutX="119.0" layoutY="148.0" prefHeight="23.0" prefWidth="249.0" promptText="09123456789" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField id="nameTextfield" fx:id="usernameTextfield" layoutX="119.0" layoutY="176.0" prefHeight="23.0" prefWidth="249.0" promptText="junmoon" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <PasswordField id="passPasswordfield" fx:id="passPasswordfield" layoutX="119.0" layoutY="203.0" prefHeight="25.0" prefWidth="249.0" promptText="●●●●●●●●" style="-fx-background-radius: 50;" />
+            <TextField id="fnameTextfield" fx:id="IDTextfield" layoutX="119.0" layoutY="37.0" prefHeight="18.0" prefWidth="249.0" promptText="AAP-XXX" style="-fx-background-radius: 50;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </TextField>
+            <Button id="createButton" fx:id="updateButton" layoutX="186.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: #1074bd; -fx-background-radius: 50;" text="UPDATE" textFill="#fbe215">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="439.0" layoutY="288.0" prefHeight="266.0" prefWidth="272.0" style="-fx-background-color: #fff8c2; -fx-background-radius: 20; -fx-border-color: #1074bd; -fx-border-radius: 20;">
+         <children>
+            <Label fx:id="timelabel" alignment="CENTER" layoutX="17.0" layoutY="94.0" text="11:11:11 PM" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="datelabel" alignment="CENTER" layoutX="21.0" layoutY="142.0" text="February 29, 2025" textFill="#1074bd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="400.0" layoutY="101.0" text="WHERE TO FLY?" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="471.0" layoutY="148.0" text="Whether you’re looking for a tropical escape," textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="470.0" layoutY="163.0" prefHeight="14.0" prefWidth="241.0" text="a cultural adventure, or a luxury getaway, " textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="385.0" layoutY="178.0" prefHeight="14.0" prefWidth="326.0" text="Avan Airways has the perfect destination for you! 🌍✈" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

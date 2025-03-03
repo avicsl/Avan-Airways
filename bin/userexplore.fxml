@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="744.0" style="-fx-background-color: #fbe215;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserExploreController">
+   <children>
+      <Pane layoutX="34.0" layoutY="101.0" prefHeight="34.0" prefWidth="676.0" style="-fx-background-color: #1074bd; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER" layoutX="86.0" layoutY="3.0" prefHeight="28.0" prefWidth="521.0" text="TOP 6 DESTINATION" textFill="#fbe215">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="679.0" layoutY="41.0">
+         <image>
+            <Image url="@../../../Downloads/aaaa%20logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="25.0" text="EXPLORE" textFill="#1074bd">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="35.0" layoutY="149.0">
+         <image>
+            <Image url="@../../../Downloads/boracayy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="271.0" layoutY="149.0">
+         <image>
+            <Image url="@../../../Downloads/japan.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="508.0" layoutY="149.0">
+         <image>
+            <Image url="@../../../Downloads/dubai.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="35.0" layoutY="357.0">
+         <image>
+            <Image url="@../../../Downloads/australia.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="272.0" layoutY="357.0">
+         <image>
+            <Image url="@../../../Downloads/switzerland.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="508.0" layoutY="357.0">
+         <image>
+            <Image url="@../../../Downloads/sokor.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="japanbtn" layoutX="271.0" layoutY="149.0" mnemonicParsing="false" onAction="#showJapanInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="TOKYO" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Button>
+      <Button fx:id="uaebtn" layoutX="508.0" layoutY="149.0" mnemonicParsing="false" onAction="#showUAEInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="DUBAI" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Button>
+      <Button fx:id="boracaybtn" layoutX="35.0" layoutY="149.0" mnemonicParsing="false" onAction="#showBoracayInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="BORACAY" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="sokorbtn" layoutX="508.0" layoutY="357.0" mnemonicParsing="false" onAction="#showSouthKoreaInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="SEOUL" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Button>
+      <Button fx:id="switzerlandbtn" layoutX="271.0" layoutY="357.0" mnemonicParsing="false" onAction="#showSwitzerlandInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="ZURICH" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Button>
+      <Button fx:id="australiabtn" layoutX="35.0" layoutY="357.0" mnemonicParsing="false" onAction="#showAustraliaInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="SYDNEY" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
