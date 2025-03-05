@@ -12,8 +12,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -65,7 +67,7 @@ public class AdminFlightController implements Initializable {
     private void updateFlight() {
         Flight selectedFlight = flightTable.getSelectionModel().getSelectedItem();
         if (selectedFlight == null) {
-            System.out.println("No flight selected!");
+            showErrorAlert("❌ No flight selected!");
             return;
         }
  
@@ -75,6 +77,21 @@ public class AdminFlightController implements Initializable {
         String newArrivalTime = computeArrivalTime(newDepartureTime, newArrivalLocation);
         String newRoundTrip = roundtriptextfield.getText();
         String newReturnDate = returndatetextfield.getText();
+ 
+        // Validate departure date
+        if (!validateDate(newDepartureDate, "Departure Date")) {
+            return;
+        }
+ 
+        // Validate return date if roundtrip is "yes"
+        if (newRoundTrip.equalsIgnoreCase("yes") && !validateDate(newReturnDate, "Return Date")) {
+            return;
+        }
+ 
+        // Validate return date is not earlier than departure date
+        if (newRoundTrip.equalsIgnoreCase("yes") && !validateReturnDate(newDepartureDate, newReturnDate)) {
+            return;
+        }
  
         try (Connection connection = DatabaseHandler.getDBConnection()) {
             String query = "UPDATE flight SET arrival_location = ?, departure_date = ?, departure_time = ?, " +
@@ -94,7 +111,6 @@ public class AdminFlightController implements Initializable {
                 clearFields(); // Clear input fields
                 showUpdateAlert(); // Show alert message
             } else {
-                System.out.println("Flight update failed.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +129,15 @@ public class AdminFlightController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Flight Update");
         alert.setHeaderText(null);
-        alert.setContentText("The selected flight has been updated successfully!");
+        alert.setContentText("✅ The selected flight has been updated successfully!");
+        alert.showAndWait();
+    }
+ 
+    private void showErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
  
@@ -140,7 +164,6 @@ public class AdminFlightController implements Initializable {
         ResultSet rs = DatabaseHandler.getFlightBookings();
  
         if (rs == null) {
-            System.out.println("No data retrieved from the database.");
             return;
         }
  
@@ -198,13 +221,13 @@ public class AdminFlightController implements Initializable {
     private void updateArrivalTime() {
         String departureTime = departuretimecombobox.getValue();
         String arrivalLocation = arrivallocationcombobox.getValue();
-   
+ 
         if (departureTime == null || arrivalLocation == null) {
             return;
         }
-   
+ 
         String arrivalTime = computeArrivalTime(departureTime, arrivalLocation);
-        
+        System.out.println("✅ Computed arrival time: " + arrivalTime);
     }
  
     private String computeArrivalTime(String departureTime, String arrivalLocation) {
@@ -212,65 +235,123 @@ public class AdminFlightController implements Initializable {
         if (duration == null) {
             return "N/A";
         }
-   
+ 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
         LocalTime departureLocalTime = LocalTime.parse(departureTime, formatter);
         LocalTime arrivalLocalTime = departureLocalTime.plusMinutes(duration);
         return arrivalLocalTime.format(formatter);
     }
  
-   
- 
     private void handleRoundTrip(String value) {
         if (returndatetextfield == null) {
-            System.out.println("returndatetextfield is null!");
+            System.out.println("❌ returndatetextfield is null!");
             return;
         }
-   
+ 
         if (value.equalsIgnoreCase("yes")) {
             returndatetextfield.setDisable(false);
         } else {
             returndatetextfield.setDisable(true);
             returndatetextfield.clear(); // Clear return date field if disabled
         }
-   
+    }
+ 
+    private boolean validateDate(String date, String fieldName) {
+        if (date == null || date.trim().isEmpty()) {
+            showErrorAlert("❌ " + fieldName + " is empty!");
+            return false;
+        }
+ 
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate.parse(date, formatter);
+            return true;
+        } catch (DateTimeParseException e) {
+            showErrorAlert("❌ Invalid date format in " + fieldName + ". Please use yyyy-MM-dd.");
+            return false;
+        }
+    }
+ 
+    private boolean validateReturnDate(String departureDate, String returnDate) {
+        if (returnDate == null || returnDate.trim().isEmpty()) {
+            return true; // Kung walang return date, valid pa rin
+        }
+ 
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate depDate = LocalDate.parse(departureDate, formatter);
+            LocalDate retDate = LocalDate.parse(returnDate, formatter);
+ 
+            if (retDate.isBefore(depDate)) {
+                showErrorAlert("❌ Return date cannot be earlier than departure date.");
+                return false;
+            }
+            return true;
+        } catch (DateTimeParseException e) {
+            showErrorAlert("❌ Invalid date format in return date. Please use yyyy-MM-dd.");
+            return false;
+        }
     }
  
     @FXML
     private void updateFlight(ActionEvent event) {
+        System.out.println("Update button clicked!");  // Debugging output
+        // Your update logic here
     }
  
     @FXML
     private void deleteFlight() {
-    Flight selectedFlight = flightTable.getSelectionModel().getSelectedItem();
+        Flight selectedFlight = flightTable.getSelectionModel().getSelectedItem();
  
-    if (selectedFlight == null) {
-        System.out.println("No flight selected!");
-        return;
-    }
- 
-    // Confirmation alert before deleting
-    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-    alert.setTitle("Confirm Deletion");
-    alert.setHeaderText("Are you sure you want to delete this flight?");
-    alert.setContentText("This action cannot be undone.");
- 
-    if (alert.showAndWait().get() == ButtonType.OK) {
-        try (Connection connection = DatabaseHandler.getDBConnection()) {
-            String query = "DELETE FROM flight WHERE flight_id = ?";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, selectedFlight.getFlightId());
- 
-            int rowsDeleted = ps.executeUpdate();
-            if (rowsDeleted > 0) {
-                flightList.remove(selectedFlight); 
-            } else {
-                System.out.println("Flight deletion failed.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        // Kung walang flight na naka-select, magpakita ng error alert
+        if (selectedFlight == null) {
+            showErrorAlert("❌ No flight selected! Please select a flight to delete.");
+            return;
         }
+ 
+        // Confirmation alert bago mag-delete
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Confirm Deletion");
+        confirmAlert.setHeaderText("Are you sure you want to delete this flight?");
+        confirmAlert.setContentText("Flight ID: " + selectedFlight.getFlightId() + "\nThis action cannot be undone.");
+ 
+        // Kapag pinindot ang OK sa confirmation alert, ituloy ang deletion
+        confirmAlert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                try (Connection connection = DatabaseHandler.getDBConnection()) {
+                    String query = "DELETE FROM flight WHERE flight_id = ?";
+                    PreparedStatement ps = connection.prepareStatement(query);
+                    ps.setString(1, selectedFlight.getFlightId());
+ 
+                    int rowsDeleted = ps.executeUpdate();
+                    if (rowsDeleted > 0) {
+                        // Magpakita ng success alert
+                        showSuccessAlert("✅ Flight deleted successfully!\nFlight ID: " + selectedFlight.getFlightId());
+                        flightList.remove(selectedFlight); // Alisin sa table
+                    } else {
+                        showErrorAlert("❌ Flight deletion failed. Please try again.");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    showErrorAlert("❌ An error occurred while deleting the flight. Please check the database connection.");
+                }
+            }
+        });
+    }
+ 
+    private void showSuccessAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+ 
+    private void showErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
-}
- 
