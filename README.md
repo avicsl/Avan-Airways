@@ -26,3 +26,4 @@ Rather than emphasizing web or mobile development, Avan Airways focuses on the b
 - **Relational Database Design**: Implementation of normalized, scalable schemas for real-world applications.
 - **System Architecture**: Integration of frontend (JavaFX) and backend (MySQL) components.
 - **User Experience**: Designing interfaces that support smooth user interactions with minimal complexity.
+
